@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Ranking System</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+<link rel="stylesheet" href="/src/styles.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <header id="header1" class="w-full bg-black text-white shadow-md">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    
+  <!-- Left: Logo / Name -->
+<div class="flex items-center space-x-3 space-y-0">
+  <img
+    src="images/logo.png"
+    alt="RankIt Logo"
+    class="h-[50px] w-auto"
+  />
+</div>
+
+
+    <!-- Right: Optional Navigation -->
+    <nav class="hidden md:flex space-x-6 text-sm font-medium">
+      <div class="flex gap-8 text-white font-bold">
+      <a href="#ranking-process" class="hover:text-grey-200 transition">
+        Method
+      </a>
+      <a href="#pdf" class="hover:text-grey-200 transition">
+        About
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= LANDING PAGE ================= -->
+<section
+  id="landing-page"
+  class="relative min-h-screen flex flex-col justify-center items-center text-center px-8"
+  style="background-image: url('bg.jpg'); background-size:cover; background-position: center;"
+>
+
+  <!-- Black Overlay -->
+  <div class="absolute inset-0 bg-black/20"></div>
+
+  <!-- Content -->
+  <div class="relative z-10">
+
+    <h1 class="text-5xl font-extrabold mb-4 text-white">
+      Find the Best Universities for You
+    </h1>
+
+    <p class="max-w-3xl text-lg text-gray-200 mb-6">
+      Explore, compare, and choose the world’s best universities based on what matters most to you.
+    </p>
+
+    <button
+      onclick="goToFieldPage()"
+      class="px-8 py-3 bg-[#dca119] text-white font-bold text-lg rounded-full hover:bg-[#fbc700]  transition"
+    >
+      Explore Rankings
+    </button>
+
+  </div>
+
+  
+
+</section>
+<br>
+
+<section id= "abc" class="bg-grey-80 py-12">
+  <div class="max-w-xl mx-auto flex justify-center gap-8 items-center">
+
+    <img src="images/image.png"
+         alt="Data Driven"
+         class="w-20 h-20 opacity-100" />
+
+    <img src="images/image copy 2.png"
+         alt="Analysis"
+         class="w-20 h-20 opacity-100" />
+
+    <img src="images/image copy 3.png"
+         alt="Weighted Ranking"
+         class="w-20 h-20 opacity-100" />
+
+    <img src="images/image copy.png"
+         alt="Ranking"
+         class="w-20 h-20 opacity-100" />
+
+  </div>
+</section>
+
+
+<!-- ================= RANKI PROCESS ================= -->
+<section class="bg-gray-80 py-18 px-6 md:px-20" id="ranking-process" class="hidden min-h-screen p-10>
+  <div class="max-w-6xl mx-auto">
+
+     <h2 class="text-4xl font-extrabold text-slate-800 mb-6 flex items-center justify-center">
+      <span class="mr-2"></span> How Does the College Ranking Work?
+    </h2>
+    
+
+<p class="text-lg text-gray-600 mb-10 max-w-4xl mx-auto text-center">      This platform ranks colleges using a structured, data-driven process designed
+      to be fair, transparent, and flexible. Instead of relying on a single score,
+      multiple factors are considered together.
+    </p>
+
+<div class="flex justify-center my-8">
+  <div class="w-[700px] h-0.5 bg-[#EDCA63]"></div>
+</div>
+
+
+
+
+
+
+
+    <div class="space-y-10">
+
+      <!-- Step 1 -->
+      <div class="flex items-start gap-6 bg-white p-8 rounded-2xl shadow-sm">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#dca119] text-white flex items-center justify-center font-bold text-lg">
+          1
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-slate-800">
+            Data Preparation
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            Each college is represented using important parameters such as academics,
+            infrastructure, faculty, and location. All values are standardized so
+            that different parameters can be compared fairly.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="flex items-start gap-6 bg-white p-8 rounded-2xl shadow-sm">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#dca119]  text-white flex items-center justify-center font-bold text-lg">
+          2
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-slate-800">
+            Understanding College Similarity
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            Many colleges are very similar in performance. The system identifies
+            such institutions and treats them as a group instead of forcing strict
+            separation, avoiding unfair ranking differences.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex items-start gap-6 bg-white p-8 rounded-2xl shadow-sm">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#dca119]  text-white flex items-center justify-center font-bold text-lg">
+          3
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-slate-800">
+            Parameter-wise Scoring
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            Each college receives a score for every parameter. Instead of simple
+            yes/no decisions, partial scores are assigned to reflect how well a
+            college performs in each area.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="flex items-start gap-6 bg-white p-8 rounded-2xl shadow-sm">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#dca119]  text-white flex items-center justify-center font-bold text-lg">
+          4
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-slate-800">
+            Importance of Parameters
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            Different users value different aspects of education. The platform
+            allows assigning importance to parameters so the ranking reflects
+            individual preferences.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="flex items-start gap-6 bg-white p-8 rounded-2xl shadow-sm">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#dca119]  text-white flex items-center justify-center font-bold text-lg">
+          5
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-slate-800">
+            Final Score Calculation
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            All parameter scores and assigned weights are combined into a final
+            score. Colleges are then sorted based on this score to generate the
+            final ranking list.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= PARAMETERS : ICON + CARDS ================= -->
+<section class="bg-gray-100 py-20"  id="ranking-parameters" class="hidden min-h-screen p-10>
+ <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-4xl font-extrabold text-slate-800 mb-6 flex items-center justify-center">
+      <span class="mr-2"></span> Ranking Parameters
+    </h2> <div class="relative pl-10 border-l-4 border-[#EDCA63] space-y-10"></div>
+    <div class="flex justify-center my-8">
+  <div class="w-[500px] h-0.5 bg-[#EDCA63]"></div>
+</div>
+    <br><br><br>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+
+      <!-- TLR -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-blue-100">
+          <i class="fas fa-chalkboard-teacher text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="font-bold mb-2">Teaching, Learning & Resources <br>(TLR)
+</h3>
+        <p class="text-sm text-gray-600 justify-center" >
+         Measures the quality of teaching and learning environment, including student strength, faculty quality, infrastructure, financial resources, and online education support.
+        </p>
+      </div>
+
+      <!-- RP -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-green-100">
+          <i class="fas fa-flask text-green-600 text-2xl"></i>
+        </div>
+        <h3 class="font-bold mb-2">Research and Professional Practice <br>(RP)
+</h3>
+        <p class="text-sm text-gray-600">
+          Evaluates research output and innovation, such as publications, quality of research, patents, funded projects, and contributions to sustainable development goals.
+        </p>
+      </div>
+
+      <!-- GO -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-purple-100">
+          <i class="fas fa-user-graduate text-purple-600 text-2xl"></i>
+        </div>
+        <h3 class="font-bold mb-2">Graduation Outcomes <br>(GO)
+</h3>
+        <p class="text-sm text-gray-600">
+          Focuses on student success, including exam performance, graduation rates, and the number of Ph.D. students completing their studies.
+        </p>
+      </div>
+
+      <!-- OI -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-orange-100">
+          <i class="fas fa-users text-orange-600 text-2xl"></i>
+        </div>
+        <h3 class="font-bold mb-2">Outreach and Inclusivity <br>(OI)</h3>
+        <p class="text-sm text-gray-600">
+          Measures diversity and inclusion, considering students from different regions, gender balance, support for disadvantaged groups, and facilities for differently-abled students.
+        </p>
+      </div>
+
+      <!-- PR -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-yellow-100">
+          <i class="fas fa-star text-yellow-600 text-2xl"></i>
+        </div>
+        <h3 class="font-bold mb-2">Peer Perception <br>(PR)</h3>
+        <p class="text-sm text-gray-600">
+          Reflects reputation and public opinion based on feedback from academic peers and employers.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<br>
+<!-- ================= RESEARCH PAPER DOWNLOAD ================= -->
+<section id= "pdf" class="bg-grey-100 py-20 px-6 md:px-20">
+  <div class=" p-10 text-center">
+
+    <h2 class="text-4xl font-extrabold text-slate-800 mb-6 flex items-center justify-center">
+      Want to Know the Science Behind the Rankings?
+    </h2>
+
+    <p class="text-lg text-gray-600 mb-10 max-w-4xl mx-auto text-center  justify-center">
+      Our ranking methodology is based on a detailed research study.
+      To understand the mathematical model, assumptions, and evaluation
+      process in depth, you can download our complete research paper.
+    </p>
+
+    <a href="research-paper.pdf" download
+       class="inline-flex items-center gap-3 px-8 py-3 bg-[#dca119]  text-white text-lg font-semibold rounded-full ">
+      <i class="fas fa-file-pdf text-xl"></i>
+      Download Research Paper (PDF)
+    </a>
+
+    <p class="text-sm text-gray-400 mt-4">
+      *PDF contains complete methodology, equations, and experimental analysis.
+    </p>
+
+  </div>
+</section>
+
+
+
+<!-- ================= FIELD SELECTION PAGE ================= -->
+<section id="field-page" class="hidden min-h-screen bg-gray-100 py-20 px-6">
+
+  <div class="max-w-6xl mx-auto text-center">
+
+    <!-- Title -->
+    <h2 class="text-4xl font-extrabold text-slate-800 mb-4">
+      Select College Category
+    </h2>
+
+    <!-- Subtitle -->
+    <p class="text-lg text-gray-600 mb-14">
+      Choose a category to explore rankings based on your field of interest
+    </p>
+
+    <!-- Horizontal Accent Line -->
+    <div class="flex justify-center mb-14">
+      <div class="w-[500px] h-0.5 bg-[#EDCA63]"></div>
+    </div>
+
+    <!-- Category Cards -->
+    <div
+      id="field-list"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+    ></div>
+
+  </div>
+</section>
+
+
+<!-- ================= RANKING PAGE ================= -->
+<section id="ranking-page" class="hidden min-h-screen p-10">
+
+<h2 id="selected-title" class="text-3xl font-bold mb-4"></h2>
+<br>
+
+<div class="flex gap-4 mb-6">
+  
+ <div class="relative w-64">
+  <!-- Search Icon -->
+  <img
+    src="images/image copy 4.png"
+    alt="Search"
+    class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 opacity-70"
+  >
+
+  <!-- Search Input -->
+  <input
+    id="search-input"
+    type="text"
+    placeholder="Search college name"
+    class="pl-10 pr-4 py-2 border rounded-full w-full"
+    oninput="applySearchFilter()"
+  >
+</div>
+
+    
+  <button onclick="toggleCustomMode()"
+    class="px-6 py-2 bg-[#dca119] text-white font-semibold rounded-full hover:bg-[#fbc700]">
+    Make Your Own List
+  </button>
+</div>
+
+<!-- Priority Section -->
+<div id="priority-section" class="hidden bg-white p-6 rounded-2xl shadow mb-6">
+  <h3 class="text-lg font-semibold mb-4">Click Parameters in Priority Order</h3>
+  <div id="priority-buttons" class="flex flex-wrap rounded-full gap-4"></div>
+</div>
+<!-- ================= SEARCH + FILTER + COMPARE CONTROLS ================= -->
+
+
+<!-- Table -->
+<div class="bg-white rounded-xl shadow overflow-x-auto">
+<table class="w-full border-collapse">
+  <thead id="table-head" class="bg-gray-100 text-xs uppercase font-bold"></thead>
+  <tbody id="ranking-body"></tbody>
+</table>
+</div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+<footer id-="footer1"  class="w-full bg-black text-white py-4 mt-10">
+  <div class="max-w-7xl mx-auto text-center text-sm">
+    © 2025 · RankIt | Author – <span class="font-semibold">Arpit Madse</span>
+  </div>
+</footer>
+
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

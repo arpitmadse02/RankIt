@@ -1,0 +1,15 @@
+/* src/styles.css */
+
+/* Ensures smooth scrolling behavior when navigating to sections (e.g., using #ranking-process) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* You can add any custom styles or class overrides here if needed. 
+   
+   Example: If you wanted a specific font import:
+   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+   body {
+       font-family: 'Roboto', sans-serif;
+   }
+*/
