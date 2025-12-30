@@ -2,6 +2,19 @@ import { PARAMS, priorityOrder, weights } from "./config.js";
 
 /* ================= TABLE ================= */
 export function renderTable(data) {
+
+  let head = `
+    <tr class="text-xs uppercase bg-white">
+     
+      <th class="p-4">Rank</th>
+      <th class="p-4">Institution</th>
+      <th class="p-4">State</th>
+      <th class="p-4">Total Score</th>`;
+  PARAMS.forEach(p => head += `<th class="p-4">${p}</th>`);
+  head += "</tr>";
+
+  document.getElementById("table-head").innerHTML = head;
+
   const body = document.getElementById("ranking-body");
   body.innerHTML = "";
 

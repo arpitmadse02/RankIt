@@ -41,6 +41,37 @@
   </div>
 </header>
 
+<header
+  id="header-secondary"
+  class="hidden w-full bg-black text-white shadow-md"
+>
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+
+    <!-- Left: Back button -->
+    <button
+      onclick="goBack()"
+      class="flex items-center gap-2 text-sm font-semibold hover:text-gray-300"
+    >
+      <i class="fas fa-arrow-left"></i>
+      Back
+    </button>
+
+    <!-- Center: Logo -->
+    <div class="absolute left-1/2 transform -translate-x-1/2">
+      <img
+        src="images/logo.png"
+        alt="images/logo.png"
+        class="h-[45px] w-auto"
+      />
+    </div>
+
+    <!-- Right: empty (keeps center aligned) -->
+    <div class="w-16"></div>
+
+  </div>
+</header>
+
+
 <!-- ================= LANDING PAGE ================= -->
 <section
   id="landing-page"
@@ -372,7 +403,8 @@
     id="search-input"
     type="text"
     placeholder="Search college name"
-    class="pl-10 pr-4 py-2 border rounded-full w-full"
+     style="border: 0.3px solid black;"
+    class="pl-10 pr-4 py-2 rounded-full w-full"
     oninput="applySearchFilter()"
   >
 </div>

@@ -3,6 +3,9 @@ import { FIELDS } from "./js/config.js";
 import { loadField } from "./js/ranking.js";
 import { goToFieldPage } from "./js/navigation.js";
 import { applySearchFilter } from "./js/ui.js";
+import { goBack } from "./js/navigation.js";
+
+window.goBack = goBack;
 
 /* expose for inline HTML */
 window.goToFieldPage = goToFieldPage;
