@@ -2,6 +2,10 @@
 
 RankIt is a data-driven web application that allows users to explore and rank colleges based on multiple academic and institutional parameters. It supports both default rankings and custom priority-based rankings. This ranking is based on research paper finding and methods.
 
+🌐 Live Demo
+
+Demo URL (Cloudflare Pages):
+👉 https://rankit.pages.dev
 
 🚀 Features
 
@@ -19,6 +23,7 @@ HTML, Tailwind CSS, JavaScript (ES Modules)
 Vite – development & build tool
 
 PapaParse – CSV parsing
+
 
 ▶️ Run Locally
 
